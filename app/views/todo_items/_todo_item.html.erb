@@ -1,0 +1,7 @@
+<div class="todo-item <%= todo_item.completed? ? 'completed' : '' %>">
+  <%= todo_item.name %>
+
+  <div class="info">
+    <%= distance_of_time_in_words(todo_item.created_at) %> ago
+  </div>
+</div>
