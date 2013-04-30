@@ -1,0 +1,19 @@
+<div class="row">
+  <div class="destination">
+    <h3><%= destination.name %></h3>
+
+    <%= image_tag destination.image_url, :width => 280 %>
+  </div>
+
+  <div class="items">
+    <div class="items-<%=destination.id%>">
+      <% destination.todo_items.each do |i| %>
+        <%= render i %>
+      <% end %>
+    </div>
+
+    <%= render :partial => 'todo_items/form', :locals => { :destination => destination } %>
+  </div>
+
+
+</div>

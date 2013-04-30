@@ -1,7 +1,12 @@
-<h1>Todo Before I die</h1>
+<h1>My Bucketlist</h1>
 
-<% @items.each do |i| %>
+<p>Things I'm going to do before I die</p>
 
-  <% render i %>
+<div id="map-canvas">
 
+</div>
+
+<% @destinations.each do |d| %>
+  <%= render d %>
 <% end %>
+

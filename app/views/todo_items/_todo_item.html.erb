@@ -1,7 +1,13 @@
 <div class="todo-item <%= todo_item.completed? ? 'completed' : '' %>">
-  <%= todo_item.name %>
+  <h4><%= todo_item.name %></h4>
+
+  <%= link_to "#{todo_item.comments.length} Comments", todo_item_path(todo_item) %>
+
+  <a href="javascript:" class="toggle-comment">Leave a comment</a>
+
+  <%= render :partial => 'comments/form', :locals => { :item => todo_item } %>
 
   <div class="info">
-    <%= distance_of_time_in_words(todo_item.created_at) %> ago
+    <%= distance_of_time_in_words(Time.now, todo_item.created_at) %> ago
   </div>
 </div>

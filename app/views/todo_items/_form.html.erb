@@ -1,0 +1,17 @@
+<div class="todo-form">
+  <h4>Add a new Todo Item!</h4>
+  <%= form_for(TodoItem.new(:destination_id => destination.id), :remote => true) do |f| %>
+    <div class="field">
+      <%= f.hidden_field :destination_id %>
+      <%= f.label :name, "What do you want to do next in #{destination.name}?" %>
+      <%= f.text_field :name %>
+    </div>
+
+    <div class="field">
+      <%= f.label :location %>
+      <%= f.text_field :location %>
+    </div>
+
+    <%= f.submit "Add Item" %>
+  <% end %>
+</div>

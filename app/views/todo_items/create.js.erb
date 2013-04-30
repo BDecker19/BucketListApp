@@ -1,0 +1,2 @@
+$('.items-<%= @item.destination.id%>:first').append('<%= escape_javascript(render :partial => 'todo_item', :locals => { :todo_item => @item }) %> ');
+addMarker(<%=@item.latitude%>, <%=@item.longitude%>, '<%=@item.name%>');
