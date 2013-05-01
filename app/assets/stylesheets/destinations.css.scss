@@ -26,13 +26,16 @@ background-image: linear-gradient(to bottom right, #FFFFFF 0%, #00A3EF 100%);
 }
 
 .destination {
-  border: 1px solid #ccc;
-background: white;
-padding-bottom: 30px;
-width: 340px;
-text-align: center;
-padding-top: 20px;
-float:left;
+  padding-bottom: 30px;
+  width: 300px;
+  text-align: center;
+  padding-top: 20px;
+  float:left;
+  border-radius: 6px;
+
+  img {
+    border-radius: 280px;
+  }
 }
 
 .destination p {
@@ -42,11 +45,6 @@ font-family: cursive;
 
 .row {
   padding-bottom: 20px;
+  clear:left;
 }
 
-#map-canvas {
-  float: right;
-  width : 600px;
-  height: 400px;
-  background: white;
-}

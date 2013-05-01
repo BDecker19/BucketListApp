@@ -12,7 +12,7 @@
     $(document).ready(function() {
       initMap();
 
-      <% @all_items.each do |item| %>
+      <% TodoItem.all.each do |item| %>
         addMarker(<%=item.latitude%>, <%=item.longitude%>, '<%=item.name%>');
       <% end %>
     });
@@ -21,7 +21,12 @@
 </head>
 <body>
 
-<%= yield %>
+<div id="map-canvas">
+</div>
+
+<div id="content" class="box">
+  <%= yield %>
+</div>
 
 </body>
 </html>
