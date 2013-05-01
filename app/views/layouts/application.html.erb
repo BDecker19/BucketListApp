@@ -12,9 +12,11 @@
     $(document).ready(function() {
       initMap();
 
-      <% TodoItem.all.each do |item| %>
-        addMarker(<%=item.latitude%>, <%=item.longitude%>, '<%=item.name%>');
-      <% end %>
+      var items = <%= raw(TodoItem.all.to_json) %>;
+
+      for(item in items) {
+        addMarker(item.latitude, item.longitude, item.name);
+      }
     });
   </script>
 

@@ -2,7 +2,7 @@ var map = undefined;
 
 function initMap() {
   var mapOptions = {
-    center: new google.maps.LatLng(40.7399977, -73.9900976),
+    center: new google.maps.LatLng(42.3584308, -71.0597732),
     zoom: 12,
     mapTypeId: google.maps.MapTypeId.ROADMAP
   };
@@ -17,8 +17,17 @@ function initMap() {
   });
 
   google.maps.event.addListener(map, "center_changed", function() {
-    console.log(map.getBounds().getSouthWest());
-    console.log(map.getBounds().getNorthEast());
+    $.ajax({
+       url: '/destinations',
+       data: {
+         latitude : map.getCenter().lat(),
+         longitude: map.getCenter().lng()
+       },
+       contentType: 'text/javascript',
+       beforeSend: function(xhr) {
+         xhr.setRequestHeader('accept', 'text/javascript');
+       }
+    });
   });
 }
 
