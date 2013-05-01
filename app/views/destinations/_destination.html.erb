@@ -7,7 +7,7 @@
 
   <div class="items">
     <div class="items-<%=destination.id%>">
-      <% destination.todo_items.each do |i| %>
+      <% destination.todo_items.order(@order).each do |i| %>
         <%= render i %>
       <% end %>
     </div>

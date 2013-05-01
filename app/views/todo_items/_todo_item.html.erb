@@ -7,6 +7,12 @@
 
   <%= render :partial => 'comments/form', :locals => { :item => todo_item } %>
 
+  <div class="comments-<%= todo_item.id %>">
+    <% todo_item.comments.each do |c| %>
+      <%= render :partial => 'comments/comment', :locals => { :comment => c } %>
+    <% end %>
+  </div>
+
   <div class="info">
     <%= distance_of_time_in_words(Time.now, todo_item.created_at) %> ago
   </div>

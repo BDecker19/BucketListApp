@@ -9,10 +9,10 @@
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBqkRChzl8n0kuROcxSE1XATkHdokRxBz4&sensor=false">
   </script>
   <script type="text/javascript">
-    $(function() {
+    $(document).ready(function() {
       initMap();
 
-      <% TodoItem.all.each do |item| %>
+      <% @all_items.each do |item| %>
         addMarker(<%=item.latitude%>, <%=item.longitude%>, '<%=item.name%>');
       <% end %>
     });

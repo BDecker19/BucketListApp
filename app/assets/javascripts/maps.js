@@ -1,4 +1,4 @@
-var map;
+var map = undefined;
 
 function initMap() {
   var mapOptions = {

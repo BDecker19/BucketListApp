@@ -1,0 +1,7 @@
+// Clear the div
+$('#destinations').html("");
+
+// Add rows one by one
+<% destinations.each do |d| %>
+  $('#destinations').append('<%= escape_javascript(render :partial => "destinations/destination", :locals => { :destination => d }) %>');
+<% end %>
