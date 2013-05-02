@@ -2,11 +2,8 @@
 
 <p>Things I'm going to do before I die</p>
 
-<div>
-  <%= link_to 'Sort By Name', todo_items_path(:order => :name), :remote => true %><br />
-  <%= link_to 'Sort By Name Desc', todo_items_path(:order => 'name desc'), :remote => true %>
-</div>
-
 <div id="destinations">
-
+  <% @destinations.each do |d| %>
+    <%= render d %>
+  <% end %>
 </div>

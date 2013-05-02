@@ -1,7 +1,9 @@
 class DestinationsController < ApplicationController
 
   def index
-    items = TodoItem.near([params[:latitude], params[:longitude]])
+    lat = params[:latitude] || 40.7143528
+    lng = params[:longitude] || -74.00597309999999
+    items = TodoItem.near([lat, lng])
     @destinations = items.map { |i| i.destination }.uniq
 
     respond_to do |format|

@@ -1,7 +1,7 @@
 <div class="todo-item <%= todo_item.completed? ? 'completed' : '' %>">
   <h4><%= todo_item.name %></h4>
 
-  <%= link_to "#{todo_item.comments.length} Comments", "#" %>
+  <%= link_to "#{todo_item.comments.length} Comments", "#", :class => 'comment-count' %>
 
   <a href="javascript:" class="toggle-comment">Leave a comment</a>
 

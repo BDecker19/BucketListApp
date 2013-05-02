@@ -1,8 +1,8 @@
-var map = undefined;
+var map;
 
 function initMap() {
   var mapOptions = {
-    center: new google.maps.LatLng(42.3584308, -71.0597732),
+    center: new google.maps.LatLng(40.7143528, -74.00597309999999),
     zoom: 12,
     mapTypeId: google.maps.MapTypeId.ROADMAP
   };

@@ -15,7 +15,7 @@
       var items = <%= raw(TodoItem.all.to_json) %>;
 
       for(item in items) {
-        addMarker(item.latitude, item.longitude, item.name);
+        addMarker(items[item].latitude, items[item].longitude, items[item].name);
       }
     });
   </script>
