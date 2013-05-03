@@ -12,7 +12,7 @@
     $(document).ready(function() {
       initMap();
 
-      var items = <%= raw(TodoItem.all.to_json) %>;
+      items = <%= raw(TodoItem.all.to_json) %>;
 
       for(item in items) {
         addMarker(items[item].latitude, items[item].longitude, items[item].name);

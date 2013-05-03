@@ -7,7 +7,7 @@
 
   <%= render :partial => 'comments/form', :locals => { :item => todo_item } %>
 
-  <div class="comments-<%= todo_item.id %>">
+  <div class="comments-<%= todo_item.id %> comment-list">
     <% todo_item.comments.each do |c| %>
       <%= render :partial => 'comments/comment', :locals => { :comment => c } %>
     <% end %>

@@ -15,7 +15,7 @@
 
 .destination p {
   font-size: 28pt;
-font-family: cursive;
+  font-family: cursive;
 }
 
 .row {
@@ -26,4 +26,16 @@ font-family: cursive;
 .sort-links {
   display: inline;
   margin-right: 10px;
+}
+
+#search-box {
+  border: 1px solid #CCC;
+  padding: 8px;
+  width: 200px;
+  margin-left: 320px;
+  margin-top: 20px;
+
+  h5 {
+    margin:0px 0px 5px 0px;
+  }
 }

@@ -10,6 +10,11 @@
     <%= link_to 'Sort By Name Desc', destination_todo_items_path(destination, :order => 'name desc'), :remote => true, :class => 'sort-link' %>
   </div>
 
+  <div id="search-box">
+    <h5>Search for Items</h5>
+    <input type="text" id="search" placeholder="Enter a search term..." />
+  </div>
+
   <div class="items">
     <div class="items-<%=destination.id%>">
       <% destination.todo_items.order(@order).each do |i| %>
