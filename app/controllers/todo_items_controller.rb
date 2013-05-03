@@ -11,4 +11,10 @@ class TodoItemsController < ApplicationController
     render :template => 'todo_items/create', :content_type => 'text/javascript'
   end
 
+  def like
+    todo_item = TodoItem.find(params[:id])
+    Like.create(:todo_item_id => todo_item.id, :user_id => session[:user_id])
+    render :nothing => true
+  end
+
 end

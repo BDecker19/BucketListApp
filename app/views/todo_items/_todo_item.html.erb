@@ -5,6 +5,8 @@
 
   <a href="javascript:" class="toggle-comment">Leave a comment</a>
 
+  <%= link_to image_tag('jack.jpg', :width => 16, :height => 16), like_destination_todo_item_path(todo_item.destination.id, todo_item.id), :remote => true, :method => :post %>
+
   <%= render :partial => 'comments/form', :locals => { :item => todo_item } %>
 
   <div class="comments-<%= todo_item.id %> comment-list">

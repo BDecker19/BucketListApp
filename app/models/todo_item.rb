@@ -8,7 +8,9 @@ class TodoItem < ActiveRecord::Base
 
 
   has_many :comments
+  has_many :likes
   belongs_to :destination
+  belongs_to :user
 
   def my_cool_geocoding_method
     "#{location} #{destination.name}"
