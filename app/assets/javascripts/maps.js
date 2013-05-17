@@ -1,8 +1,9 @@
 var map;
+var timer;
 
 function initMap() {
   var mapOptions = {
-    center: new google.maps.LatLng(40.7143528, -74.00597309999999),
+    center: new google.maps.LatLng(51.51121389999999, -0.1198244),
     zoom: 12,
     mapTypeId: google.maps.MapTypeId.ROADMAP
   };
@@ -17,17 +18,27 @@ function initMap() {
   });
 
   google.maps.event.addListener(map, "center_changed", function() {
-    $.ajax({
-       url: '/destinations',
-       data: {
-         latitude : map.getCenter().lat(),
-         longitude: map.getCenter().lng()
-       },
-       contentType: 'text/javascript',
-       beforeSend: function(xhr) {
-         xhr.setRequestHeader('accept', 'text/javascript');
-       }
-    });
+    clearTimeout(timer);
+    timer = setTimeout(function() {
+
+      $.ajax({
+         url: '/destinations',
+         data: {
+           latitude : map.getCenter().lat(),
+           longitude: map.getCenter().lng()
+         },
+         contentType: 'text/javascript',
+         beforeSend: function(xhr) {
+           xhr.setRequestHeader('accept', 'text/javascript');
+         }
+      });
+
+       getCrimeStats(map.getCenter().lat(), map.getCenter().lng());
+
+     // clearTimeout(timer);
+
+    }, 2000);
+
   });
 }
 

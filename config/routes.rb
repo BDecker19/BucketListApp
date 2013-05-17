@@ -9,5 +9,11 @@ Bucketlist::Application.routes.draw do
     end
   end
 
+  resources :crimes, :only => [] do
+    collection do
+      get :stats
+    end
+  end
+
   root :to => 'destinations#index'
 end
